@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Won : MonoBehaviour {
 
@@ -10,7 +11,7 @@ public class Won : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(Input.GetKeyDown(KeyCode.Space)){
-			Application.LoadLevel("MainMenu");
+			SceneManager.LoadScene("MainMenu");
 			}
 	}
 }

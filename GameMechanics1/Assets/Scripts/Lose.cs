@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class Lose : MonoBehaviour {
@@ -11,9 +12,9 @@ public class Lose : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(Input.GetKeyDown(KeyCode.Space)){
-			Application.LoadLevel("level");
+			SceneManager.LoadScene("level");
 		}if (Input.GetKeyDown (KeyCode.Escape)) {
-			Application.LoadLevel( "MainMenu");
+			SceneManager.LoadScene( "MainMenu");
 		}
 	}
 }

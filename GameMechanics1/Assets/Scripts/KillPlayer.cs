@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class KillPlayer : MonoBehaviour {
 
@@ -20,10 +21,10 @@ public class KillPlayer : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other){
 		if (other.name == "Player") {
 			playerControl.playerLives = playerControl.playerLives -1;
-			Debug.Log(playerControl.playerLives);
+			
 			if(playerControl.playerLives <= 0){
 				levelManager.RespawnPlayer();
-				Application.LoadLevel("Loss");
+				
 			}
 		}
 	

@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Healthbar : MonoBehaviour {
-	public Sprite fullHealth, halfHealth;
+	public Sprite fullHealth, halfHealth, fullerHealth;
 	private Sprite PrevColor;
 	private SpriteRenderer spriteRenderer;
 	public static PlayerControl playerControl;
@@ -29,9 +29,14 @@ public class Healthbar : MonoBehaviour {
 			
 			//colorNumber = 1;
 			
-		}if (playerControl.playerLives == 1) {
+		}
+        if (playerControl.playerLives == 1) {
 			ChangeTheDamnSprite(fullHealth, halfHealth);
 		}
+        if (playerControl.playerLives == 3)
+        {
+            moreLives(fullHealth, fullerHealth);
+        }
 
 	}
 
@@ -46,5 +51,16 @@ public class Healthbar : MonoBehaviour {
 			spriteRenderer.sprite = halfHealth; // otherwise change it back to sprite1
 		}
 	}
+    void moreLives(Sprite fullHealth, Sprite fullerHealth)
+    {
+        if (spriteRenderer.sprite == fullHealth) // if the spriteRenderer sprite = sprite1 then change to sprite2
+        {
+            spriteRenderer.sprite = fullerHealth;
+        }
+        else
+        {
+            spriteRenderer.sprite = fullerHealth; // otherwise change it back to sprite1
+        }
+    }
 
 }

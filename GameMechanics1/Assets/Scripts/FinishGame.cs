@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using UnityEngine.SceneManagement;
 
 public class FinishGame : MonoBehaviour {
 
@@ -18,8 +18,8 @@ public class FinishGame : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other){
 		if (other.name == "Player") {
 			//for(int i =0; i<10 ;i++ ){GUI.Label(new Rect(Screen.width/2, Screen.height/2, 100, 20), "Level Complete");}
-			Debug.Log ("Player Won");
-			Application.LoadLevel("Win");
+		
+			SceneManager.LoadScene("Level2");
 
 		
 		}

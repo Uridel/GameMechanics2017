@@ -1,28 +1,41 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
+
 
 public class LevelManager : MonoBehaviour {
 
 	public GameObject currentCheckpoint;
+    private Scene scene;
 
-	private PlayerControl player;
-//	private Pickup pickup;
+    private PlayerControl player;
+
 
 	// Use this for initialization
 	void Start () {
 		player = FindObjectOfType<PlayerControl> ();
-		//pickup = FindObjectOfType<Pickup> ();
-	}
+         scene = SceneManager.GetActiveScene();
+      
+        if(scene.name == "Level2")
+        {
+            player.unlockDoubleJump = true;
+        }
+    }
 	
 	// Update is called once per frame
 	void Update () {
-	
-	}
+        if (scene.name == "Level2")
+        {
+            player.unlockDoubleJump = true;
+        }
+
+    }
 
 	public void RespawnPlayer(){
 		Debug.Log ("Player Respawn");
-		player.transform.position = currentCheckpoint.transform.position;
+        player.transform.position = player.currentCheckpoint;
+        
 		player.unlockDoubleJump = false;
-		//pickup.transform.position = 
+       
 	}
 }

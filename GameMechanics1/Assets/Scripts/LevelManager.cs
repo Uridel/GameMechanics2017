@@ -32,10 +32,10 @@ public class LevelManager : MonoBehaviour {
     }
 
 	public void RespawnPlayer(){
-		Debug.Log ("Player Respawn");
+		
         player.transform.position = player.currentCheckpoint;
         
-		player.unlockDoubleJump = false;
+		
        
 	}
 }
